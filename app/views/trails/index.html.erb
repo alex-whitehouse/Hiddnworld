@@ -1,0 +1,9 @@
+puts "hello world"
+<%= Trail.first.name %>
+<% Trail.all.each do | t | %>
+  <div> <%= link_to(t.name,trail_path(t)) %> </div>
+  <div> Nodes: </div>
+  <% t.nodes.each do | node | %>
+  <div style="margin-left:9px;"> <%= node.id %> - <%= node.question %> </div>
+  <% end %>
+<% end %>
