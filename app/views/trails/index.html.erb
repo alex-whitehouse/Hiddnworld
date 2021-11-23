@@ -1,5 +1,4 @@
-puts "hello world"
-<%= Trail.first.name %>
+
 <% Trail.all.each do | t | %>
   <div> <%= link_to(t.name,trail_path(t)) %> </div>
   <div> Nodes: </div>
