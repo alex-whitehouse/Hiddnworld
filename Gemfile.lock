@@ -106,6 +106,8 @@ GEM
     nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
     pg (1.2.3)
+    protected_attributes_continued (1.8.2)
+      activemodel (>= 5.0)
     public_suffix (4.0.6)
     puma (5.5.2)
       nio4r (~> 2.0)
@@ -197,6 +199,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  activemodel (~> 6.1, >= 6.1.4.1)
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.4)
   byebug
@@ -204,6 +207,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)
+  protected_attributes_continued (~> 1.8, >= 1.8.2)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.1)
