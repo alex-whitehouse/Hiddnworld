@@ -5,20 +5,34 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+   
+   <%= stylesheet_link_tag 'application.css' %>
 
   </head>
 
+  
   <body>
-    <div id="container">
-      <div id="user_header">
-        <% if current_user %>
+
+    <header>
+      <h1> 
+        Hiddn.World
+      </h1>
+
+      <nav>
+      <ul>
+      <% if current_user %>
         Logged in as <%= current_user.email %>.
-        <%= link_to "Log Out", logout_path %> 
+          <li><%= link_to "Log Out", logout_path %> </li>
         <% else %>
-          <%= link_to "Sign Up", signup_path %> or
-          <%= link_to "Log In", login_path %>
+          <li> <%= link_to "Sign Up", signup_path %></li>
+          <li><%= link_to "Log In", login_path %></li>
+          
         <% end %>
-        </div>
+      </ul>
+        
+        </nav>
+
+    </header>    
 
   </body>
 

@@ -1,3 +1,4 @@
+<body>
 
 <% Trail.all.each do | t | %>
   <div> <%= link_to(t.name,trail_path(t)) %> </div>
@@ -6,3 +7,4 @@
   <div style="margin-left:9px;"> <%= node.id %> - <%= node.question %> </div>
   <% end %>
 <% end %>
+</body>
