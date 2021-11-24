@@ -13,6 +13,14 @@
  *= require_tree .
  *= require_self
  */
+p {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+  back
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -20,6 +28,8 @@ ul {
   overflow: hidden;
   background-color: #333;
 }
+  
+
 
 li {
   float: left;
