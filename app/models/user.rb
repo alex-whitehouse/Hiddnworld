@@ -4,4 +4,8 @@ class User < ApplicationRecord
   attr_accessible :email, :password, :password_confirmation
 
   validates_uniqueness_of :email
+
+  has_many :completed_nodes
+
+  
 end
