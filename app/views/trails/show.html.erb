@@ -9,6 +9,19 @@
     <% if @current_node %> 
     Current Node: <%= @current_node.question%>
   </question>
+
+  <main>
+  <section class="image-section">
+    <img src="" id="image" />
+  </section>
+
+  <section class="file-section">
+    <div class="file-group">
+      <label for="file-input">Upload a picture</label>
+      <input type="file" id="file-input" />
+    </div>
+  </section>
+</main>
   
 <form>
     <%= form_with url: check_answer_path, local: true do |f| %>
