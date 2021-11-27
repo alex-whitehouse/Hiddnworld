@@ -17,6 +17,7 @@
       <h1> 
         Hiddn.World
       </h1>
+      
 
       <% flash.each do |key, value| %>
       <div class="flash <%= key %>"><%= value %></div>
@@ -26,9 +27,11 @@
       <nav>
       <ul>
       <% if current_user %>
-        Logged in as <%= current_user.email %>.
+        <activeuser> Logged in as <%= current_user.email %>. </activeuser>
+          <li><%= link_to "Profile", root_url %> </li>
           <li><%= link_to "Log Out", logout_path %> </li>
         <% else %>
+          <li> <%= link_to "Home", root_url %></li>
           <li> <%= link_to "Sign Up", signup_path %></li>
           <li><%= link_to "Log In", login_path %></li>
           

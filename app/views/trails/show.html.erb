@@ -1,17 +1,28 @@
-<%= link_to "index", trails_path %>
-<h1> <%= @trail.name %> </h1>
+<header>
+<h2> <%= @trail.name %> </h2>
+</header>
 
-<% if @current_node %> 
-  <div>Current Node: <%= @current_node.question%>
-  </div>
 
-  <%= form_with url: check_answer_path, local: true do |f| %>
+<body>
+
+  <question>
+    <% if @current_node %> 
+    Current Node: <%= @current_node.question%>
+  </question>
+  
+<form>
+    <%= form_with url: check_answer_path, local: true do |f| %>
     <%= f.label :answer %>
     <%= f.text_field :answer %>
     <%= f.hidden_field :node_id, value: @current_node.id %>
     <%= f.submit %>
     
   <% end %>
+</form>  
+
 <% else %>
   <div>You've completed the trail!</div>
 <% end %>
+
+
+</body>

@@ -43,21 +43,37 @@ li a {
   text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
+/* Changed the link color to #111 (black) on hover */
 li a:hover {
   background-color: #111;
 }
 
 h1 {
-  color: #207e30;
+  color: #eae7eb;
 }
 nav {
   background-color: rgb(224, 224, 224);
-  border-top: 5px solid #019c23;
-  border-bottom: 5px solid #019c23;
+  border-top: 5px solid #730777;
+  border-bottom: 5px solid #730777;
+}
+
+activeuser {
+  padding: 14px 16px;
+  float: right;
 }
 
 body {
   background-color: rgb(37, 37, 37);
   color: rgb(255, 255, 255);
 }
+
+#flash_notice {
+  padding: 5px 8px;
+  margin: 10px 0;
+  width: 70%;
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+
+
