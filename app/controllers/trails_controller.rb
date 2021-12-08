@@ -12,7 +12,18 @@ class TrailsController < ApplicationController
       @current_node = @trail.nodes.select { |node| !current_user.completed_nodes.map { |completed_node| completed_node.node_id }.include?(node.id) }.first
     end
 
-    
+  def admin_index
+    if !current_user.admin
+        redirect_to root_url
+    end
+
+    @trails = Trail.all 
+  end
+
+  def admin_show
+    if !current_user.admin
+      redirect_to root_url
+    end
     
   
   end

@@ -13,4 +13,9 @@ get "logout", to: "sessions#destroy", as: "logout"
   post "/nodes/check_answer", to: "nodes#checkanswer", as: "check_answer"
   
   root "trails#index"
+
+  get "/admin/trails", to "trails#admin_index"
+  get "admin/trails/:id", to "trails#admin_show"
+
+  
 end
