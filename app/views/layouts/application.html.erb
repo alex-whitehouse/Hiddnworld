@@ -35,19 +35,29 @@
 
       <nav>
       <ul>
-      <% if current_user %>
-        <activeuser> Logged in as <%= current_user.email %>. </activeuser>
-          <li><%= link_to "Profile", root_url %> </li>
-          <li><%= link_to "Log Out", logout_path %> </li>
-        <% else %>
-          <li> <%= link_to "Home", root_url %></li>
-          <li> <%= link_to "Sign Up", signup_path %></li>
-          <li><%= link_to "Log In", login_path %></li>
+        <% if current_user %>
+          <activeuser> Logged in as <%= current_user.email %>. </activeuser>
+
+            <li><%= link_to "Profile", root_url %> </li>
+            <li><%= link_to "Log Out", logout_path %> </li>
+
+          <% else %>
+
+            <li> <%= link_to "Home", root_url %></li>
+            <li> <%= link_to "Sign Up", signup_path %></li>
+            <li><%= link_to "Log In", login_path %></li>
+
+          <% end %>
           
-        <% end %>
+        <% if current_user && current_user.admin %>
+            
+            <li><%= link_to "Admin", admin_url %> </li>
+            
+          <% end %>
+         
       </ul>
         
-        </nav>
+      </nav>
 
     </header>    
 

@@ -14,7 +14,7 @@ get "logout", to: "sessions#destroy", as: "logout"
   
   root "trails#index"
 
-  get "/admin/trails", to: "trails#admin_index"
+  get "/admin/trails", to: "trails#admin_index", as: "admin"
   get "/admin/trails/:id", to: "trails#admin_show"
 
 
