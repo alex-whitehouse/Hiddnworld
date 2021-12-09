@@ -13,7 +13,7 @@
 <%= form_with model: @trail do |form| %>
   <createtrail>
     <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= form.text_field :name %>
   </createtrail>
 
 
@@ -29,7 +29,7 @@
 
 
 <% Trail.all.each do | t | %>
-  <div> <%= link_to(t.name,trail_path(t)) %> </div>
+  <div> <%= link_to(t.name,admin_show_path(t))%> </div>
   <div> Nodes: </div>
   <% t.nodes.each do | node | %>
   <div style="margin-left:9px;"> <%= node.id %> - <%= node.question%> </div>
