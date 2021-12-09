@@ -12,6 +12,8 @@ class TrailsController < ApplicationController
       @current_node = @trail.nodes.select { |node| !current_user.completed_nodes.map { |completed_node| completed_node.node_id }.include?(node.id) }.first
     end
 
+  end
+
   def admin_index
     if !current_user.admin
         redirect_to root_url
@@ -39,7 +41,9 @@ class TrailsController < ApplicationController
     else
       render "trail_new"
     end
+
   end
+  
 end
 
-end
+
