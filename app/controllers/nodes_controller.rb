@@ -10,4 +10,7 @@ class NodesController < ApplicationController
     end 
     redirect_to node.trail
   end
+
+
+
 end

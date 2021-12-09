@@ -53,8 +53,8 @@ h1 {
 }
 nav {
   background-color: rgb(224, 224, 224);
-  border-top: 5px solid #730777;
-  border-bottom: 5px solid #730777;
+  border-top: 5px solid #a004a5;
+  border-bottom: 5px solid #be14c4;
 }
 
 activeuser {
@@ -74,6 +74,5 @@ body {
   background-color: #CFC;
   border: solid 1px #6C6;
 }
-
 
 

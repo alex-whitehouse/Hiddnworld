@@ -10,6 +10,12 @@
     Current Node: <%= @current_node.question%>
   </question>
 
+
+<div> Answer: </div>
+  <% if current_user.admin %>
+    <%= @current_node.answer %>
+  <% end %>
+
   <main>
   <section class="image-section">
     <img src="" id="image" />

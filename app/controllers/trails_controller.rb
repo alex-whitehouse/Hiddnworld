@@ -22,11 +22,24 @@ class TrailsController < ApplicationController
 
   def admin_show
     if !current_user.admin
-      redirect_to root_url
+          redirect_to root_url
     end
-    
-  
+
+    @trail = Trail.find(params[:id])
+  end
+
+  def trail_new
+    @trail = Trail.new
+  end
+
+  def trail_create
+    @trail = Trail.new(params[:trail])
+    if @trail.save
+      redirect_to admin_show, notice: "Trail created!"
+    else
+      render "trail_new"
+    end
   end
 end
 
-
+end
