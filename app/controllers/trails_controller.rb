@@ -37,13 +37,13 @@ class TrailsController < ApplicationController
   def trail_create
     @trail = Trail.new(params[:trail])
     if @trail.save
-      redirect_to admin_index, notice: "Trail created!"
+      redirect_to admin_url, notice: "Trail created!"
     else
       render "trail_new"
     end
 
   end
-  
+
 end
 
 
