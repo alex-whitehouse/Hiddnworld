@@ -28,6 +28,7 @@ class TrailsController < ApplicationController
     end
 
     @trail = Trail.find(params[:trail_id])
+    @node = Node.new
   end
 
   def trail_new
@@ -42,13 +43,41 @@ class TrailsController < ApplicationController
     else
       render "trail_new"
     end
+  end 
+
+
+  def node_create
+    @node = Node.new(node_params)
+    
+    if @node.save
+      redirect_to admin_show_url, notice: "Node created!"
+    else 
+      redirect_to admin_show_url
+    end
   end
+
+
+
+
+
+
+
+
+
+
 
   private 
   
   def trail_params
     params.require(:trail).permit(:name)
   end
+
+  def node_params
+    params.require(:node).permit(:trail_id, :question, :answer)
+  end
+
+
+ 
 
 end
 

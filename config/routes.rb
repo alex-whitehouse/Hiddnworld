@@ -19,4 +19,7 @@ get "logout", to: "sessions#destroy", as: "logout"
   post "/admin/trails", to: "trails#trail_create", as: "trail_create"
 
 
+  post "/admin/trails/:trail_id", to: "trails#node_create", as: "node_create"
+
+
 end

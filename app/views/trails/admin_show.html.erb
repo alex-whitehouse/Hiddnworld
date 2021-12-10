@@ -1,17 +1,40 @@
-<h1>Amend Nodes</h1>
+<h1>Amend Nodes Panel</h1>
 
-<%= form_with model: @article do |form| %>
+<h1>Node: <%= @trail.name %></h1>
+
+<body>
+ <node_id>Node id, Question and Answer:
+    <% @trail.nodes.each do | node | %>
+      <div style="margin-left:9px;"> <%= node.id %> - <%= node.question%> - <%= node.answer %></div></div>
+    <% end %>
+</node_id>
+  
+ 
+
+
+<h3>Add Node to trail:</h3>
+
+<%= form_with model: Node.new, url:"/admin/trails/" + @trail.id.to_s do |form| %>
+
+
   <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= form.hidden_field :trail_id, value: @trail.id %>
+    <%= form.label :Question %><br>
+    <%= form.text_area :question %>
   </div>
 
   <div>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
+    
+    <%= form.label :Answer %><br>
+    <%= form.text_area :answer %>
+    
   </div>
 
   <div>
     <%= form.submit %>
   </div>
 <% end %>
+
+</body>
+
+
