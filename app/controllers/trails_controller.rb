@@ -35,13 +35,19 @@ class TrailsController < ApplicationController
   end
 
   def trail_create
-    @trail = Trail.new(params[:trail])
+    @trail = Trail.new(trail_params)
+
     if @trail.save
       redirect_to admin_url, notice: "Trail created!"
     else
       render "trail_new"
     end
+  end
 
+  private 
+  
+  def trail_params
+    params.require(:trail).permit(:name)
   end
 
 end

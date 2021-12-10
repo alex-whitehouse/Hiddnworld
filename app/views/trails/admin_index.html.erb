@@ -10,16 +10,16 @@
 
 <h2>Create New Trail:</h2>
 
-<%= form_with model: @trail do |form| %>
-  <createtrail>
+<%= form_with model: Trail.new, url: "/admin/trails" do |form| %>
+    <createtrail>
     <%= form.label :title %><br>
     <%= form.text_field :name %>
-  </createtrail>
+    </createtrail>
 
 
-  <div>
+    <div>
     <%= form.submit %>
-  </div>
+    </div>
 <% end %>
 
 
