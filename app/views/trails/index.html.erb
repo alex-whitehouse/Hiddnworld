@@ -1,11 +1,11 @@
 
 <body>
+<h2>Trails Available: </h2>
 
 <% Trail.all.each do | t | %>
   <div> <%= link_to(t.name,trail_path(t), class: "trail-link")%> </div>
-  <div> Nodes: </div>
   <% t.nodes.each do | node | %>
-  <div style="margin-left:9px;"> <%= node.id %> </div>
+  <div style="margin-left:9px;"> <%node.id %> </div>
   <% end %>
 <% end %>
 

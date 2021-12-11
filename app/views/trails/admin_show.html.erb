@@ -1,11 +1,14 @@
 <h1>Amend Nodes Panel</h1>
+<%= stylesheet_link_tag 'trails.css' %>
 
-<h1>Node: <%= @trail.name %></h1>
+<trailname>
+  <h1>Node:  <%= @trail.name%>  </h1>
+</trailname>
 
 <body>
- <node_id>Node id, Question and Answer:
+ <node_id>Node ID, Question and Answer:
     <% @trail.nodes.each do | node | %>
-      <div style="margin-left:9px;"> <%= node.id %> - <%= node.question%> - <%= node.answer %></div></div>
+      <div style="margin-left:9px;"> ID: <%= node.id %> | Question: "<%= node.question%>" | Answer: "<%= node.answer %>"</div></div>
     <% end %>
 </node_id>
   
@@ -31,9 +34,16 @@
   </div>
 
   <div>
+     <%= form.label :Hint_Image_URL %><br>
+    <%= form.text_area :image %>
+  
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
+
 
 </body>
 

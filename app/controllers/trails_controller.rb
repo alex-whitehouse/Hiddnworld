@@ -73,7 +73,7 @@ class TrailsController < ApplicationController
   end
 
   def node_params
-    params.require(:node).permit(:trail_id, :question, :answer)
+    params.require(:node).permit(:trail_id, :question, :answer, :hint)
   end
 
 
