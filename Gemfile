@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
  #attr_accessible is no longer usable in Rails 4.0+, adding protected Gemfile
 gem 'activemodel', '~> 6.1', '>= 6.1.4.1'
 gem 'protected_attributes_continued', '~> 1.8', '>= 1.8.2'
+gem 'pry', '~> 0.13.1'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

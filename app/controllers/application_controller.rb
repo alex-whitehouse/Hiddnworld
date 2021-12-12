@@ -12,8 +12,4 @@ private
     redirect_to login_url, alert: "Not Authorised" if current_user.nil?
   end
 
-  # def mobile_device?
-  #  request.user_agent =~ /mobile|webOS
-  #end
-  # helper_method :mobile_device?
 end

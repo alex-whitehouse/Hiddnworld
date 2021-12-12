@@ -1,5 +1,6 @@
 class NodesController < ApplicationController
   
+  
   def checkanswer
     node = Node.find(params[:node_id])
     if params[:answer] == node.answer
@@ -9,6 +10,7 @@ class NodesController < ApplicationController
       flash.alert = "Answer was incorrect."
     end 
     redirect_to node.trail
+    binding.pry
   end
 
 

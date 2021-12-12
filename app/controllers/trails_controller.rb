@@ -81,4 +81,3 @@ class TrailsController < ApplicationController
 
 end
 
-
