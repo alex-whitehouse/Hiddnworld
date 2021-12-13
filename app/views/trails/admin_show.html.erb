@@ -9,17 +9,53 @@
  <node_id> Node ID | Question | Answer:
     <% @trail.nodes.each do | node | %>
       <div style="margin-left:9px;"> ID: <%= node.id %> | Question: "<%= node.question%>" | Answer: "<%= node.answer %>"</div></div>
+    
     <% end %>
 </node_id>
+
+<div>
+    <% @trail.nodes.each do |node| %>
+        <div>Amend ID: <%= node.id %></div>
+        <div class="toggle-update-form-button" data-node-id="<%= node.id %>">Toggle form</div>
+        <div id="update-form-<%= node.id %>" class="hidden node-form-wrapper">
+            <%= form_with model: @node, :url => node_update_path do |form| %>
+
+
+  <div>
+    <%= form.hidden_field :node_id, value: node.id%>
+    
+   </div>
+
+   <div> 
+    <%= form.label :Question %><br>
+    <%= form.text_area :question %>
+   
+   
+  </div>
+
+  <div>
+    
+    <%= form.label :Answer %><br>
+    <%= form.text_area :answer %>
+    
+  </div>
+
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+        </div>
+    <% end %>
+</div>
   
  
 
 
-<h3>Adjust nodes in trail:</h3>
+<h3>Create a new node in trail:</h3>
 <button type="button" id="create-node-button">Create</button> 
-<button type="button" id="amend-node-button">Amend</button> 
-<%= link_to "<button>Add</button>".html_safe, admin_show_update_path, :id=>"amend-node-button", :class=>"inbox-sf-add-btn tip" %>
-<button type="button" id="create-node-button">Delete</button> 
+
 
 <createnode id= "createnode" class="hidden">
 <%= form_with model: Node.new, url:"/admin/trails/" + @trail.id.to_s do |form| %>
@@ -55,46 +91,6 @@
 
 
 
-<%= form_with model: node, :url => node_update_path do |form| %>
-
-
-  <div>
-    <%= form.hidden_field :trail_id, value: @trail.id %>
-     <%= form.label :Node_ID %><br>
-    <%= form.text_area :node_id %>
-   </div>
-
-   <div> 
-    <%= form.label :Question %><br>
-    <%= form.text_area :question %>
-   
-   
-  </div>
-
-  <div>
-    
-    <%= form.label :Answer %><br>
-    <%= form.text_area :answer %>
-    
-  </div>
-
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 
 <script>
@@ -105,10 +101,13 @@ document.getElementById("create-node-button").addEventListener("click", function
 </script>
 
 <script>
-document.getElementById("amend-node-button").addEventListener("click", function() {
-  document.getElementById("amendnode").classList.toggle("hidden");
-  
-});
+    document.querySelectorAll(".toggle-update-form-button").forEach(function(button) {
+        button.addEventListener("click", function(e) {
+            document.getElementById(`update-form-${e.target.dataset.nodeId}`).classList.toggle("hidden");
+        });
+        const formToShow = 
+        document.getElementById
+    });
 </script>
 
 

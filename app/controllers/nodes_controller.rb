@@ -31,7 +31,7 @@ end
   private
 
   def node_params
-    params.require(:node_id).permit(:question, :answer, :hint)
+    params.require(:node).permit(:node_id, :question, :answer, :hint)
   end
 
 end
