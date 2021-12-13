@@ -10,8 +10,13 @@ class TrailsController < ApplicationController
     else
       @trail = Trail.find(params[:trail_id])
       @current_node = @trail.nodes.select { |node| !current_user.completed_nodes.map { |completed_node| completed_node.node_id }.include?(node.id) }.first
+      @trail_progress = @trail.nodes.select { |node| current_user.completed_nodes.map { |completed_node| completed_node.node_id }.include?(node.id) }.count
     end
 
+  end
+
+  def nodeprogress
+    @nodeprogress = @trail.nodes.select { |node| current_user.completed_nodes.map { |completed_node| completed_node.node_id }.include?(node.id) }.count
   end
 
   def admin_index

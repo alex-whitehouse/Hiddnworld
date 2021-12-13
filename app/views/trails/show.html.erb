@@ -1,14 +1,30 @@
 <header>
 <h2> <%= @trail.name %> </h2>
+
+
+Progress: <%= @trail_progress%> / <%= @trail.nodes.count%>
+<progress value="<%=@trail_progress%>" max="<%=@trail.nodes.count%>">
+
+</progress>
+
 </header>
+
+
+
 
 
 <body>
 
+
+
+
   <question>
-    <% if @current_node %> 
+  <h3>
+   <% if @current_node %> 
     Current Node: <%= @current_node.question%>
   </question>
+  </h3>
+   
 
 
 
