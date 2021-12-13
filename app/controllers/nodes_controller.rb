@@ -18,7 +18,7 @@ class NodesController < ApplicationController
   
 
 def update
-  @node = Node.find(params[:node_id])
+  @node = Node.find(params[:node][:node_id])
     if @node.update(node_params)
       redirect_to admin_show_url, notice: "Node updated!"
     else
@@ -31,7 +31,7 @@ end
   private
 
   def node_params
-    params.require(:node).permit(:node_id, :question, :answer, :hint)
+    params.require(:node).permit(:question, :answer)
   end
 
 end
