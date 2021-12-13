@@ -18,6 +18,9 @@ get "logout", to: "sessions#destroy", as: "logout"
   get "/admin/trails/:trail_id", to: "trails#admin_show", as: "admin_show"
   post "/admin/trails", to: "trails#trail_create", as: "trail_create"
 
+  get "admin/update/:trail_id", to: "nodes#show_update", as: "admin_show_update"
+  post "admin/trails/", to: "nodes#update", as: "node_update" 
+
 
   post "/admin/trails/:trail_id", to: "trails#node_create", as: "node_create"
 

@@ -18,7 +18,6 @@
 <h3>Adjust nodes in trail:</h3>
 <button type="button" id="create-node-button">Create</button> 
 <button type="button" id="amend-node-button">Amend</button> 
-<%= link_to "<button>Add</button>".html_safe, admin_show_update_path, :id=>"amend-node-button", :class=>"inbox-sf-add-btn tip" %>
 <button type="button" id="create-node-button">Delete</button> 
 
 <createnode id= "createnode" class="hidden">
@@ -55,7 +54,7 @@
 
 
 
-<%= form_with model: node, :url => node_update_path do |form| %>
+<%= form_with model: @nodes, url: node_update_path do |form| %>
 
 
   <div>

@@ -60,12 +60,6 @@ class TrailsController < ApplicationController
 
 
 
-
-
-
-
-
-
   private 
   
   def trail_params

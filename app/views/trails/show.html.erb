@@ -42,7 +42,7 @@
  
 
   
-<form>
+
     <%= form_with url: check_answer_path, local: true do |f| %>
     <%= f.label :answer %>
     <%= f.text_field :answer %>
@@ -50,7 +50,7 @@
     <%= f.submit %>
     
   <% end %>
-</form>  
+
 
 <% else %>
   <div>You've completed the trail!</div>

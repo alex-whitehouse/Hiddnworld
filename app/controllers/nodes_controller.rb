@@ -10,9 +10,28 @@ class NodesController < ApplicationController
       flash.alert = "Answer was incorrect."
     end 
     redirect_to node.trail
-    binding.pry
   end
 
+  def edit
+    @node = Node.find(params[:node_id])
+  end
+  
 
+def update
+  @node = Node.find(params[:node_id])
+    if @node.update(node_params)
+      redirect_to admin_show_url, notice: "Node updated!"
+    else
+      redirect_to admin_show_url
+    end
+end
+
+
+
+  private
+
+  def node_params
+    params.require(:node_id).permit(:question, :answer, :hint)
+  end
 
 end
