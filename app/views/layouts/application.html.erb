@@ -3,6 +3,7 @@
   <head>
  
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     
@@ -24,12 +25,12 @@
       </h1>
       
 
-      <% flash.each do |key, value| %>
-      <div class="flash <%= key %>"><%= value %></div>
+      <% flash.each do |type, msg| %>
+      <div class="alert" <%= type %>"><%= msg %></div>
       <% end %>
       
 
-      <nav>
+      <nav class="navbar navbar-inverse">
       <ul>
       
       <% if current_user && current_user.admin %>

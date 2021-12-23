@@ -61,6 +61,19 @@ class TrailsController < ApplicationController
     end
   end
 
+  def image_classify
+    require "onnxruntime"
+    require "mini_magick"
+
+    img = MiniMagick::Image.open("images/bears.jpg")
+    pixels = img.get_pixels
+
+    model = OnnxRuntime::Model.new("lib/model.onnx")
+    result = model.predict({"inputs" => [pixels]})
+
+    @num_detections = result["num_detections"]
+    @detectionClasses = result["detection_classes"]
+  end
 
 
 

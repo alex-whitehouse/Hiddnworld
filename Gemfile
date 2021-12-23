@@ -25,6 +25,10 @@ gem 'jbuilder', '~> 2.7'
 gem 'activemodel', '~> 6.1', '>= 6.1.4.1'
 gem 'protected_attributes_continued', '~> 1.8', '>= 1.8.2'
 gem 'pry', '~> 0.13.1'
+gem "onnxruntime"
+gem "mini_magick"
+gem "carrierwave", '~> 0.9'
+gem "bootstrap-sass", '~>2.3.2'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -45,7 +49,7 @@ group :development do
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  #gem 'spring'
 end
 
 group :test do

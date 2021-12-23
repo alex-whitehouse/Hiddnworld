@@ -49,6 +49,7 @@ li a:hover {
 }
 
 h1 {
+  padding-top: 50px;
   color: #eae7eb;
 }
 nav {
@@ -67,12 +68,6 @@ body {
   color: rgb(255, 255, 255);
 }
 
-#flash_notice {
-  padding: 5px 8px;
-  margin: 10px 0;
-  width: 70%;
-  background-color: #CFC;
-  border: solid 1px #6C6;
-}
+
 
 
