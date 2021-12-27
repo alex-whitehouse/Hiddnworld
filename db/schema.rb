@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2021_12_23_204945) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "trail_id", null: false
     t.string "hint"
+    t.boolean "imageq", default: false
     t.index ["trail_id"], name: "index_nodes_on_trail_id"
   end
 
