@@ -31,6 +31,7 @@ gem "carrierwave", '~> 0.9'
 gem "bootstrap-sass", '~>2.3.2'
 gem 'irb'
 gem 'rdoc'
+gem 'rmagick'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

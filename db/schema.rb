@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_23_204945) do
+ActiveRecord::Schema.define(version: 2022_01_02_172642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2021_12_23_204945) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "trail_id", null: false
     t.string "hint"
-    t.boolean "imageq", default: false
+    t.boolean "image_question", default: false
     t.index ["trail_id"], name: "index_nodes_on_trail_id"
   end
 

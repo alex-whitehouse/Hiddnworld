@@ -54,7 +54,7 @@ Progress: <%= @trail_progress%> / <%= @trail.nodes.count%>
 
       <%= form_with url: check_answer_path, local: true do |f| %>
       <%= f.label :answer %>
-      <% if @current_node.imageq %>
+      <% if @current_node.image_question %>
         <% if params[:answer] %>
           <%= f.hidden_field :answer, value: params[:answer] %>
           <img src="/images/<%= current_user.id %>.jpg" />
