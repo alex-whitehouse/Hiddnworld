@@ -52,13 +52,23 @@ Progress: <%= @trail_progress%> / <%= @trail.nodes.count%>
 
   
 
-    <%= form_with url: check_answer_path, local: true do |f| %>
-    <%= f.label :answer %>
-    <%= f.text_field :answer %>
-    <%= f.hidden_field :node_id, value: @current_node.id %>
-    <%= f.submit %>
-    
-  <% end %>
+      <%= form_with url: check_answer_path, local: true do |f| %>
+      <%= f.label :answer %>
+      <% if @current_node.imageq %>
+        <% if params[:answer] %>
+          <%= f.hidden_field :answer, value: params[:answer] %>
+          <img src="/images/<%= current_user.id %>.jpg" />
+        <% else %>
+          <%= f.file_field :image_answer %>
+        <% end %>
+      <% else %>
+        <%= f.text_field :answer %>
+      <% end %>
+
+      <%= f.hidden_field :node_id, value: @current_node.id %>
+
+      <%= f.submit %>
+    <% end %>
 
 
 <% else %>
