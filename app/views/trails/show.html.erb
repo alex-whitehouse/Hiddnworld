@@ -16,12 +16,17 @@ Progress: <%= @trail_progress%> / <%= @trail.nodes.count%>
 <body>
 
 
+<currentnode>
+<h4>
+Current Node: 
+</h4>
 
+</currentnode>
 
   <question>
   <h3>
    <% if @current_node %> 
-    Current Node: <%= @current_node.question%>
+    <%= @current_node.question%>
   </question>
   </h3>
    

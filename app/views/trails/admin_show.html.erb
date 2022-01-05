@@ -8,9 +8,10 @@
 <body>
  <node_id> Node ID | Question | Answer:
     <% @trail.nodes.each do | node | %>
-      <div style="margin-left:9px;"> ID: <%= node.id %> | Question: "<%= node.question%>" | Answer: "<%= node.answer %>"</div></div>
+      <div style="margin-left:9px;"> ID: <%= node.id %> | Question: "<%= node.question%>" | Answer: "<%= node.answer %>"| <%= link_to "Destroy", node_destroy_path(node.id), data: { confirm: "Are you sure?" } %></div></div>
     
     <% end %>
+  
 </node_id>
 
 <div>

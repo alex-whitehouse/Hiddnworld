@@ -192,6 +192,12 @@ def update
     end
 end
 
+def destroy
+  @node = Node.find(params[:node_id])
+  @node.destroy
+  redirect_to admin_show_url(trail_id: @node.trail.id)
+end
+
 # for labelling images
 def draw_box(img, label, box)
   width, height = img.dimensions

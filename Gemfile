@@ -27,11 +27,11 @@ gem 'protected_attributes_continued', '~> 1.8', '>= 1.8.2'
 gem 'pry', '~> 0.13.1'
 gem "onnxruntime"
 gem "mini_magick"
-gem "carrierwave", '~> 0.9'
-gem "bootstrap-sass", '~>2.3.2'
 gem 'irb'
 gem 'rdoc'
 gem 'rmagick'
+gem 'bootstrap', '~> 5.1.3'
+gem 'popper_js', '~> 2.9.3'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
