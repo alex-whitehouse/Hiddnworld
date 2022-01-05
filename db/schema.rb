@@ -25,13 +25,6 @@ ActiveRecord::Schema.define(version: 2022_01_02_172642) do
     t.index ["user_id"], name: "index_completed_nodes_on_user_id"
   end
 
-  create_table "imageuploads", force: :cascade do |t|
-    t.string "name"
-    t.string "attachment"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "nodes", force: :cascade do |t|
     t.string "question"
     t.string "answer"

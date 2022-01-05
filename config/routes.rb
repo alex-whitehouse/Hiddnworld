@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'imageupload/index'
-  get 'imageupload/new'
-  get 'imageupload/create'
-  get 'imageupload/destroy'
 get "signup", to: "users#new", as: "signup"
 get "login", to: "sessions#new", as: "login"
 get "logout", to: "sessions#destroy", as: "logout"
@@ -28,7 +24,7 @@ get "logout", to: "sessions#destroy", as: "logout"
 
   post "/admin/trails/:trail_id", to: "trails#node_create", as: "node_create"
 
-  resources :imageupload, only: [:index, :new, :create, :destroy]
+
    
 
 end
