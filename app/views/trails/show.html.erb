@@ -20,82 +20,88 @@
          
         </h4>
       </div>
-      <div class="row d-flex justify-content-center p-4"></div>
-      <div class="row d-flex justify-content-center">row 2</div>
-    </div>
       
-  <div class="col-2"></div>
-</div> 
-<div class="d-flex justify-content-center">
-  <!-- Content here -->
+      <div class="row d-flex justify-content-center p-4"><body>
+
+
+          <question>
+          <h3>
+          <% if @current_node %> 
+            <%= @current_node.question%>
+          </question>
+          </h3>
+          
+
+
+
+          <% if current_user.admin %>
+            <div> Answer: </div>
+            <%= @current_node.answer %>
+          <% end %>
+
+          <main>
+          <section class="image-section">
+            <img src="" id="image" />
+          </section>
+
+        
+
+        <% if @current_node.hint %>
+          <nodehint>
+            <img id="node-hint" <img style="max-width: 200px;"src="<%= @current_node.hint %>" class="hidden" />
+          </nodehint>
+          <button type="button" id="show-hint-button">Hint</button> 
+        <% end %>
+
+
+        
+
+          
+
+              <div class="row d-flex justify-content-center">
+              
+              <div>
+                <%= form_with url: check_answer_path, local: true do |f| %>
+                <%= f.label :answer %>
+                <% if @current_node.image_question %>
+                  <% if params[:answer] %>
+                    <%= f.hidden_field :answer, value: params[:answer] %>
+                    <img src="/images/<%= current_user.id %>.jpg" />
+                  <% else %>
+                    <%= f.file_field :image_answer %>
+                  <% end %>
+                <% else %>
+                  <%= f.text_field :answer %>
+                <% end %>
+
+                <%= f.hidden_field :node_id, value: @current_node.id %>
+
+                <%= f.submit %>
+              <% end %>
+              </div>
+            </div>
+
+
+        <% else %>
+          <div class="row d-flex justify-content-center">You've completed the trail!</div>
+            </div>
+        <% end %>
+
+
+        </body></div>
+              
+              
+          <div class="col-2"></div>
+        </div> 
+        <div class="d-flex justify-content-center">
+          <!-- Content here -->
 
           
 </div> 
 
 
 
-<body>
 
-
-  <question>
-  <h3>
-   <% if @current_node %> 
-    <%= @current_node.question%>
-  </question>
-  </h3>
-   
-
-
-
-  <% if current_user.admin %>
-    <div> Answer: </div>
-    <%= @current_node.answer %>
-  <% end %>
-
-  <main>
-  <section class="image-section">
-    <img src="" id="image" />
-  </section>
-
- 
-
-<% if @current_node.hint %>
-  <nodehint>
-    <img id="node-hint" <img style="max-width: 200px;"src="<%= @current_node.hint %>" class="hidden" />
-  </nodehint>
-  <button type="button" id="show-hint-button">Hint</button> 
-<% end %>
-
-
- 
-
-  
-
-      <%= form_with url: check_answer_path, local: true do |f| %>
-      <%= f.label :answer %>
-      <% if @current_node.image_question %>
-        <% if params[:answer] %>
-          <%= f.hidden_field :answer, value: params[:answer] %>
-          <img src="/images/<%= current_user.id %>.jpg" />
-        <% else %>
-          <%= f.file_field :image_answer %>
-        <% end %>
-      <% else %>
-        <%= f.text_field :answer %>
-      <% end %>
-
-      <%= f.hidden_field :node_id, value: @current_node.id %>
-
-      <%= f.submit %>
-    <% end %>
-
-
-<% else %>
-  <div>You've completed the trail!</div>
-<% end %>
-
-
-</body>
 
 
 <script>

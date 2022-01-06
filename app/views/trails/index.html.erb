@@ -1,8 +1,22 @@
 
 <body>
-<h2>Trails Available: </h2>
 
 
+<div class="row py-3">
+  <div class="col-2"></div>
+  <div class="col-8 bg-light rounded" >
+      <h2>
+        <div class="row d-flex justify-content-center border">Trails Available:</div>
+      </h2>
+    
+      <div class="d-flex justify-content-center">
+        </div>
+      <div class="row d-flex justify-content-center"></div>
+      <div class="row d-flex justify-content-center">
+        <h4>
+         
+        </h4>
+      </div>
 
 <% Trail.all.each do | t | %>
   <div> <%= link_to(t.name,trail_path(t), class: "trail-link")%> </div>
