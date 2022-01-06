@@ -1,27 +1,41 @@
 <header>
-<h2> <%= @trail.name %> </h2>
-
-
-Progress: <%= @trail_progress%> / <%= @trail.nodes.count%>
-<progress value="<%=@trail_progress%>" max="<%=@trail.nodes.count%>">
-
-</progress>
 
 </header>
 
+<div class="row py-3">
+  <div class="col-2"></div>
+  <div class="col-8 bg-light rounded" >
+      <h2>
+        <div class="row d-flex justify-content-center"><%= @trail.name %></div>
+      </h2>
+    
+      <div class="d-flex justify-content-center">
+        <progress class="progress" style="height: 25px; width: 400px; "value="<%=@trail_progress%>" max="<%=@trail.nodes.count%>">
 
+        </progress>
+        </div>
+      <div class="row d-flex justify-content-center">Progress: <%= @trail_progress%> / <%= @trail.nodes.count%></div>
+      <div class="row d-flex justify-content-center">
+        <h4>
+         
+        </h4>
+      </div>
+      <div class="row d-flex justify-content-center p-4"></div>
+      <div class="row d-flex justify-content-center">row 2</div>
+    </div>
+      
+  <div class="col-2"></div>
+</div> 
+<div class="d-flex justify-content-center">
+  <!-- Content here -->
+
+          
+</div> 
 
 
 
 <body>
 
-
-<currentnode>
-<h4>
-Current Node: 
-</h4>
-
-</currentnode>
 
   <question>
   <h3>
